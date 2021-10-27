@@ -8,9 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Nunito+Sans&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
+    
     <title>Third Landing</title>
 </head>
-<body>
+<body id="entbody">
 
 <header>
     <div class="container">
@@ -40,6 +41,11 @@
                 <img src="./images/search_icon.svg" alt="" class="icon search_icon">
             </a>
         </div>
+        <div class="header_burger burger">
+            <span class="burger_line burger_line1"></span>
+            <span class="burger_line burger_line2"></span>
+            <span class="burger_line burger_line3"></span>
+        </div>
         </nav>
     </div>
 </header>
@@ -48,17 +54,17 @@
 
 <section class="hero">
     <div class="red_rectangle"></div>
-    <div class="container_lines">
+    <div id="lines" class="container_lines">
     <div class="container_another">
         <div class="text_half">
             <div class="hero_headers">
-                <h3>Decorate Home</h3>
+                <h3 class="typing-demo">Decorate Home</h3>
                 <h2>Feel your home 
                     with a modern design
                     space</h2>
 
                     <div class="hero_buttons">
-                        <button class="btn discover_btn" type="submit">Discover</button>
+                        <button id="myID" class="btn discover_btn" type="submit">Discover</button>
                         <div class="play_icon_container">
                             <img src="./images/play-button-svgrepo-com.svg" alt="" class="play_icon">
                         </div>
@@ -112,7 +118,7 @@
               </div>
               
            
-        <div class="text_half">
+        <div class="text_half_about">
             <div class="headers_about">
                 <h2>About</h2>
                 <!-- <h1 data-text="Furniture"> Furniture</h1> -->
@@ -138,15 +144,33 @@
             <h3>More value from this</h3>
             <h1>Furniture</h1>
         </div>
-        <div class="image-stack">
-            <div class="image-stack__item image-stack__item--top_more">
+        <div class="image-stack_more">
+            <div class="image-stack__item_main image-stack__item--top_more">
               <img src="./images/more_value_main.jpg" alt="">
             </div>
-            <div class="image-stack__item image-stack__item--bottom_more">
+            <div class="image-stack__item_dots image-stack__item--bottom_more">
                 <img src="./images/more_value_dots.jpg" alt="">
             </div>
 
-            <div class="image-stack__item image-stack__item--right_more">
+            <div class="image-stack__item_more image-stack__item--left_more">
+                <div class="more_white_rectangle">
+                  <div class="more_card_text">
+                      <div class="more_card_title">
+                          <div class="more_card_number">1</div>
+                          <span>Full services</span>
+                      </div>
+                     
+                     <p>Provide the best service and very fast 
+                      response.
+                      
+                      </p>
+  
+                  </div>
+  
+                </div>
+            </div>
+
+            <div class="image-stack__item_more image-stack__item--right_more">
                <div class="more_white_rectangle">
                 <div class="more_card_text">
                     <div class="more_card_title">
@@ -162,24 +186,8 @@
 
                </div>
               </div>
-              <div class="image-stack__item image-stack__item--left_more">
-                  <div class="more_white_rectangle">
-                    <div class="more_card_text">
-                        <div class="more_card_title">
-                            <div class="more_card_number">1</div>
-                            <span>Full services</span>
-                        </div>
-                       
-                       <p>Provide the best service and very fast 
-                        response.
-                        
-                        </p>
-    
-                    </div>
-    
-                  </div>
-              </div>
-              <div class="image-stack__item image-stack__item--middle_more">
+              
+              <div class="image-stack__item_more image-stack__item--middle_more">
                 <div class="more_white_rectangle">
                     <div class="more_card_text">
                         <div class="more_card_title">
@@ -262,8 +270,8 @@
        
         <div class="text_half">
             <div class="try_now_headers">
-                <h1>Let's</h1>
-                <h1>Try Now</h1>
+                <h1 class="typing-demo">Let's  Try Now</h1>
+                
                  <button class="btn explore_btn" type="submit">Explore</button>
         
                     
@@ -352,5 +360,47 @@
     </div>
     </div>
 </footer>
+<script >
+//     document.getElementById("myID").addEventListener("mouseover", function() {
+// document.body.style.background = "linear-gradient(to right, #ff4e50, #f9d423)";
+// document.getElementById("lines").style.background = "linear-gradient(to right, #ff4e50, #f9d423)";
+// });
+
+// document.getElementById("myID").addEventListener("mouseout", function() {
+//     document.body.style.background = "white";
+//     document.getElementById("lines").style.background ="white";
+// });
+
+
+//ATTENTIONs
+//In the javascript code below, the class names should be changed
+(function(){
+    const header=document.querySelector('.header')
+    window.onscroll=()=>{
+        if(window.pageYOffset>50){
+            header.classList.add('header_active');
+        }else{
+        header.classList.remove('header_active');
+             }
+    };
+
+
+}());
+
+/*burger menu*/
+(function(){
+    const burgerItem=document.querySelector('.burger')
+    const menu= document.querySelector('.header_nav')
+    const menuClose=document.querySelector('.header_nav_close')
+    burgerItem.addEventListener('click',()=>{
+        menu.classList.add('header_nav_active');
+    });
+
+    menuClose.addEventListener('click',()=>{
+        menu.classList.remove('header_nav_active');
+    });
+
+}());
+</script>
 </body>
 </html>

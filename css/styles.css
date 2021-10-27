@@ -8,6 +8,7 @@
 html{
     font-size: 16px;
 }
+
 img{
     width: 100%;
     max-width: 100%;
@@ -168,11 +169,50 @@ header{
    
 }
 
+.header_burger{
+    display: none;
+    width:35px;
+    height:27px;
+    position:relative;
+  }
+  
+  .burger_line{
+    display:block;
+    height: 2px;
+    width:100%;
+    background-color: black;
+    position:absolute;
+    left:0;
+  }
+  
+  .burger_line1{
+    top:0;
+  }
+  
+  .burger_line3{
+    bottom: 0;
+  }
+  
+  .burger_line2{
+    top:50%;
+    transform: translateY(-50%);
+    
+  }
+
 .hero{
     position: relative;
     margin-bottom: 250px;
 }
 
+.typing-demo {
+    width: 15ch;
+    animation: typing 2.5s steps(30) infinite, blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    /* font-family: monospace;
+    font-size: 2em; */
+  }
 
 .hero_headers{
     margin-top: 10%;
@@ -204,6 +244,7 @@ header{
 .container_lines{
      width: 100%; 
     background:url(../images/lines_hero.jpg) left repeat;
+    
     /* background-color: rgba(255,255,255,0.5); */
 }
 
@@ -292,6 +333,12 @@ line-height: 27px;
     display: grid;
     position: relative; 
     grid-template-columns: repeat(24, 1fr);
+  }
+
+  .image-stack_more{
+    display: grid;
+    position: relative; 
+    grid-template-columns: repeat(12, 1fr);
   }
   
   .image-stack__item--bottom_about {
@@ -520,8 +567,51 @@ line-height: 27px;
 }
 
 @media screen and (max-width:1100px) {
-    /* .nav_list{
-       
-    
-    } */
+    .nav_list{
+       display:none;
+    }
+
+    .burger{
+        display:block;
+    }
+    .image-stack_more{
+        display:initial;
+    }
+    .image-stack__item--bottom_more{
+        display:none;
+    }
+    .image-stack__item--left_more{
+        display:block;
+        margin:0 0;
+        padding:0 0;
+    }
+    .image-stack__item_more{
+        display:block;
+        margin:10px 0;
+        padding:0 0;
+    }
+
+    .more_white_rectangle{
+        width:100%;
+    }
+
+    .text_half_about{
+        grid-row-start: -1;
+    }
 }
+
+@keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+
+
+
+  /*ADAPTIVITY ALMOST DONE. ONLY SOME HEADING SIZES AND ANIMATION WIDTHS SHOULD BE CHANGED*/
